@@ -1,22 +1,29 @@
-# golang-cover-parse
+# golang-cover-json
 
-Parse Go cover results file to JavaScript Object
+Parse [golang-cover](https://blog.golang.org/cover) report files, and return a JSON representation in a [lcov-parse](https://github.com/davglass/lcov-parse) compatible manner.
 
-The output is based on, and intended to be compatible with, https://github.com/davglass/lcov-parse
+## Usage
 
-Also see:
-- [cobertura-parse](https://www.npmjs.com/package/cobertura-parse)
-- [jacoco-parse](https://www.npmjs.com/package/jacoco-parse)
+```javascript
+var gocov = require("golang-cover-json");
 
-## Use
+// Parse by file path
+gocov.parseFile("filepath.xml")
+    .then(function (result) {
+        console.log(JSON.stringify(result));
+    }).catch(function (err) {
+        console.error(err);
+    });
 
-```js
-var gocov = require( "golang-cover-parse" );
-
-// parse by file path
-gocov.parseFile( "filepath.out", function( err, result ) { ... } );
-
-// or parse file contents
-gocov.parseContent( "...",
-    function( err, result ) { ... } );
+// Parse by file contents
+gocov.parseContent("mode: count ...")
+    .then(function (result) {
+        console.log(JSON.stringify(result));
+    }).catch(function (err) {
+        console.error(err);
+    });
 ```
+
+## Thanks
+
+This repo was initially forked from [vokal/golang-cover-parse](https://github.com/vokal/golang-cover-parse). Thanks a lot!

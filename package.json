@@ -1,23 +1,39 @@
 {
-  "name": "golang-cover-parse",
-  "version": "1.0.1",
-  "description": "Parse Go coverage to JavaSript object, based on output from lcov-parse",
-  "main": "source/index.js",
+  "name": "@cvrg-report/golang-cover-json",
+  "version": "0.1.0",
+  "description": "Parse golang cover coverage data to JSON, using the same format as lcov-parse",
+  "keywords": [
+    "coverage",
+    "report",
+    "golang",
+    "cover",
+    "json",
+    "lcov",
+    "parse"
+  ],
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha --reporter spec",
-    "testcover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
+    "testcover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
+    "publish-please": "publish-please",
+    "prepublishOnly": "publish-please guard"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vokal/golang-cover-parse.git"
+    "url": "https://github.com/cvrg-report/golang-cover-json.git"
   },
-  "author": "Vokal",
+  "author": "TobiLG",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vokal/golang-cover-parse/issues"
+    "url": "https://github.com/cvrg-report/golang-cover-json/issues"
   },
-  "homepage": "https://github.com/vokal/golang-cover-parse",
+  "homepage": "https://github.com/cvrg-report/golang-cover-json",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.1",
+    "publish-please": "^2.3.1"
+  },
   "dependencies": {
-    "mocha": "^2.2.5"
+    "xml2js": "^0.4.19"
   }
 }
