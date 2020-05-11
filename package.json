@@ -1,6 +1,6 @@
 {
   "name": "@cvrg-report/golang-cover-json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parse golang cover coverage data to JSON, using the same format as lcov-parse",
   "keywords": [
     "coverage",
@@ -13,10 +13,8 @@
   ],
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha --reporter spec",
-    "testcover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
-    "publish-please": "publish-please",
-    "prepublishOnly": "publish-please guard"
+    "test": "mocha",
+    "test-coverage": "nyc mocha"
   },
   "repository": {
     "type": "git",
@@ -29,11 +27,10 @@
   },
   "homepage": "https://github.com/cvrg-report/golang-cover-json",
   "devDependencies": {
-    "istanbul": "^0.4.5",
-    "mocha": "^5.0.1",
-    "publish-please": "^2.3.1"
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1"
   },
   "dependencies": {
-    "xml2js": "^0.4.19"
+    "xml2js": "^0.4.23"
   }
 }

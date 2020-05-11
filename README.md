@@ -2,10 +2,16 @@
 
 Parse [golang-cover](https://blog.golang.org/cover) report files, and return a JSON representation in a [lcov-parse](https://github.com/davglass/lcov-parse) compatible manner.
 
+## Installation
+
+```bash
+$ npm i @cvrg-report/golang-cover-json --save
+```
+
 ## Usage
 
 ```javascript
-var gocov = require("golang-cover-json");
+var gocov = require("@cvrg-report/golang-cover-json");
 
 // Parse by file path
 gocov.parseFile("filepath.xml")
